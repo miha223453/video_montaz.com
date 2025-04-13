@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Видео монтаж</title>
+  <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('img/background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 5%;
+      }      
+      
+      .content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        max-width: 500px;
+      }
+      
+      /* Заголовок */
+      .title {
+        color: rgb(255, 255, 255);
+        font-size: 3em;
+        margin: 0 0 0.5em 0;
+      }
+      
+      /* Описание */
+      .description {
+        color: rgb(255, 255, 255);
+        font-size: 1.2em;
+        margin-bottom: 1.5em;
+      }
+      
+      /* Кнопка */
+      .cta-button {
+        padding: 1em 2em;
+        font-size: 1em;
+        background-color: #f83434;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        align-self: center; /* можешь изменить на center или flex-end */
+      }
+      
+      .cta-button:hover {
+        background-color: #e21616;
+      }      
+  
+    /* Квиз */
+    #quiz {
+      display: none;
+      background: white;
+      color: black;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+  
+    #quiz h2 {
+      margin-bottom: 20px;
+    }
+  
+    #quiz input,
+    #quiz select,
+    #quiz textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+  
+    #quiz button {
+      margin-top: 15px;
+      background-color: #4CAF50;
+    }
+  
+    #quiz button:hover {
+      background-color: #388e3c;
+    }
+  
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>  
+</head>
+<body>
+    <div class="content">
+        <h1 class="title">Профессиональный видеомонтаж</h1>
+        <p class="description">Создаю запоминающиеся видео для YouTube, соцсетей, рекламы и личных проектов. Готов к новым вызовам!</p>
+        <button class="cta-button" onclick="openQuiz()">Оставить заявку</button>
+      </div>      
+
+  <div id="overlay" onclick="closeQuiz()"></div>
+
+  <div id="quiz">
+    <h2>Оставьте заявку</h2>
+    <input type="text" placeholder="Ваше имя" />
+    <input type="tel" placeholder="Телефон" />
+    <textarea placeholder="Ваш комментарии..."></textarea>
+    <button onclick="submitQuiz()">Отправить</button>
+  </div>
+
+  <script>
+    function openQuiz() {
+      document.getElementById('quiz').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closeQuiz() {
+      document.getElementById('quiz').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    function submitQuiz() {
+      alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+      closeQuiz();
+    }
+  </script>
+</body>
+</html>
